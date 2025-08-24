@@ -60,28 +60,28 @@ A comprehensive complaint management system with separate interfaces for student
 Below are screenshots showcasing the main user interfaces and key features of the Student Complaint Portal frontend application.
 
 ### Login Interface
-![Login](images/img1.png)
+![Login](images/img1.jpg)
 
 ### Student Dashboard Home
-![Student Dashboard](images/img2.png)
+![Student Dashboard](images/img2.jpg)
 
 ### Complaints Submission & Tracking
-![My Complaints](images/img3.png)
+![My Complaints](images/img3.jpg)
 
 ### Student Announcements Panel
-![Student Announcements](images/img4.png)
+![Student Announcements](images/img4.jpg)
 
 ### Administrator Dashboard Overview
-![Admin Dashboard](images/img5.png)
+![Admin Dashboard](images/img5.jpg)
 
 ### Admin Announcements Management
-![Admin Announcements](images/img6.png)
+![Admin Announcements](images/img6.jpg)
 
 ### Complaints Archive and History
-![Complaints Archive](images/img7.png)
+![Complaints Archive](images/img7.jpg)
 
 ### Administrator Contact Information Panel
-![Admin Contact Info](images/img8.png)
+![Admin Contact Info](images/img8.jpg)
 
 ## 🔧 How to Use
 
