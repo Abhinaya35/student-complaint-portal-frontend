@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Dashboard – Raise & Resolve</title>
+  <link rel="stylesheet" href="student_dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <h3><i class="fas fa-graduation-cap"></i> Student Portal</h3>
+    </div>
+    <ul class="sidebar-menu">
+      <li class="menu-item">
+        <a href="#" class="menu-link active" data-panel="dashboard">
+          <i class="fas fa-home"></i>
+          Dashboard
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="#" class="menu-link" data-panel="my-complaints">
+          <i class="fas fa-list-alt"></i>
+          My Complaints
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="#" class="menu-link" data-panel="announcements">
+          <i class="fas fa-bullhorn"></i>
+          Announcements
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content Area -->
+  <div class="main-content">
+    <!-- Header -->
+    <header class="student-header">
+      <div class="header-content">
+        <div class="header-left">
+          <div class="welcome-section">
+            <span class="user-greeting">Welcome, Abhinaya!</span>
+            <p class="welcome-subtitle">Your voice matters. Submit complaints and track their progress here.</p>
+          </div>
+        </div>
+        <div class="header-right">
+          <div class="profile-dropdown">
+            <button class="profile-icon" id="profileIcon">
+              <i class="fas fa-user-circle"></i>
+            </button>
+            <div class="dropdown-menu" id="dropdownMenu">
+              <a href="#" class="dropdown-item">
+                <i class="fas fa-user"></i>
+                View Profile
+              </a>
+              <a href="#" class="dropdown-item">
+                <i class="fas fa-edit"></i>
+                Edit Profile
+              </a>
+              <a href="#" class="dropdown-item">
+                <i class="fas fa-sign-out-alt"></i>
+                Logout
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Dashboard Content -->
+    <main class="dashboard-content">
+      <!-- Dashboard Panel (Complaint Submission) -->
+      <section id="dashboard" class="panel active">
+        <div class="panel-header">
+          <h2><i class="fas fa-plus-circle"></i> Submit New Complaint</h2>
+          <p>Quickly submit your complaints and get them resolved efficiently.</p>
+        </div>
+        
+        <div class="complaint-form-container">
+          <form class="complaint-form" id="complaintForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="complaint-priority">Priority</label>
+                <select id="complaint-priority" required>
+                  <option value="">Select priority</option>
+                  <option value="high">🔴 High Priority</option>
+                  <option value="medium">🟡 Medium Priority</option>
+                  <option value="low">🟢 Low Priority</option>
+                </select>
+              </div>
+            </div>
+            
+            <div class="form-group">
+              <label for="complaint-detail">Details</label>
+              <textarea id="complaint-detail" rows="4" placeholder="Describe your complaint…" required></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="quick-templates">Quick Templates (Optional)</label>
+              <select id="quick-templates" onchange="fillTemplate()">
+                <option value="">Select a template to get started</option>
+                <option value="wifi-issue">📶 WiFi connectivity issues in my room</option>
+                <option value="mess-food">🍽️ Mess food quality and hygiene concerns</option>
+                <option value="hostel-maintenance">🏠 Hostel room maintenance required</option>
+                <option value="academic-support">📚 Need academic support or clarification</option>
+                <option value="transport-issue">🚌 Transport service problems</option>
+              </select>
+            </div>
+
+            <button type="submit"><i class="fas fa-paper-plane"></i> Submit Complaint</button>
+          </form>
+
+          <!-- Message shown after submission (initially hidden, shown via JS/backend) -->
+          <div class="category-result-message" id="categoryResultMessage" style="display: none;">
+            <span>
+              Your complaint has been classified as: <strong id="predictedCategory">[category]</strong>.
+              If you think this is incorrect, <button class="flag-btn" id="flagBtn">let us know</button>.
+            </span>
+          </div>
+        </div>
+      </section>
+
+      <!-- My Complaints Panel -->
+      <section id="my-complaints" class="panel">
+        <div class="panel-header">
+          <h2><i class="fas fa-list-alt"></i> My Complaints</h2>
+          <p>Track the status of all your submitted complaints.</p>
+        </div>
+        
+        <!-- Search and Filter Section -->
+        <div class="table-controls">
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchComplaints" placeholder="Search complaints...">
+          </div>
+          <div class="filter-controls">
+            <select id="statusFilter">
+              <option value="">All Status</option>
+              <option value="pending">Pending</option>
+              <option value="resolved">Resolved</option>
+            </select>
+            <select id="priorityFilter">
+              <option value="">All Priorities</option>
+              <option value="high">High Priority</option>
+              <option value="medium">Medium Priority</option>
+              <option value="low">Low Priority</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-container">
+          <table class="complaints-table">
+            <thead>
+              <tr>
+                <th>Complaint ID</th>
+                <th>Category</th>
+                <th>Priority</th>
+                <th>Submitted On</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Example rows; replace with dynamic content in real usage -->
+              <tr>
+                <td>202501</td>
+                <td><span class="category-badge">🍽️ Mess</span></td>
+                <td><span class="priority-badge high">🔴 High</span></td>
+                <td>2025-07-28</td>
+                <td class="status-pending">Pending</td>
+                <td><button class="flag-btn">Report Wrong Category</button></td>
+              </tr>
+              <tr>
+                <td>202490</td>
+                <td><span class="category-badge">📶 WiFi</span></td>
+                <td><span class="priority-badge medium">🟡 Medium</span></td>
+                <td>2025-07-20</td>
+                <td class="status-resolved">Resolved</td>
+                <td><button class="rate-btn">Rate Resolution</button></td>
+              </tr>
+              <tr>
+                <td>202485</td>
+                <td><span class="category-badge">🏠 Hostel Maintenance</span></td>
+                <td><span class="priority-badge low">🟢 Low</span></td>
+                <td>2025-07-15</td>
+                <td class="status-pending">Pending</td>
+                <td><button class="flag-btn">Report Wrong Category</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Announcements Panel -->
+      <section id="announcements" class="panel">
+        <div class="panel-header">
+          <h2><i class="fas fa-bullhorn"></i> Announcements</h2>
+          <p>Stay updated with important announcements from the administration.</p>
+        </div>
+        
+        <div class="announcements-container">
+          <div class="announcement-card">
+            <div class="announcement-header">
+              <h3><i class="fas fa-info-circle"></i> Water Maintenance Notice</h3>
+              <span class="announcement-date">July 30, 2025</span>
+            </div>
+            <p>Water supply will be temporarily suspended in Block A from 10:00 AM to 2:00 PM on August 8th for maintenance work. Please store water accordingly.</p>
+            <div class="announcement-tags">
+              <span class="tag maintenance">Maintenance</span>
+              <span class="tag urgent">Urgent</span>
+            </div>
+          </div>
+
+          <div class="announcement-card">
+            <div class="announcement-header">
+              <h3><i class="fas fa-utensils"></i> Mess Feedback Form</h3>
+              <span class="announcement-date">July 28, 2025</span>
+            </div>
+            <p>The mess feedback form is now live! Share your suggestions and feedback to help us improve the food quality and service.</p>
+            <div class="announcement-tags">
+              <span class="tag feedback">Feedback</span>
+              <span class="tag general">General</span>
+            </div>
+          </div>
+
+          <div class="announcement-card">
+            <div class="announcement-header">
+              <h3><i class="fas fa-calendar-alt"></i> Academic Calendar Update</h3>
+              <span class="announcement-date">July 25, 2025</span>
+            </div>
+            <p>Updated academic calendar for the upcoming semester has been released. Please check the notice board for important dates and deadlines.</p>
+            <div class="announcement-tags">
+              <span class="tag academic">Academic</span>
+              <span class="tag important">Important</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="student_dashboard.js"></script>
+</body>
+</html>

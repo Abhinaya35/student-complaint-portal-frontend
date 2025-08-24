@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Raise & Resolve - Student Complaint Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1 class="portal-title">Raise & Resolve</h1>
+        <p class="portal-subtitle">Student Complaint & Action Management Portal</p>
+    </header>
+    
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <p id="loadingText">Authenticating...</p>
+        </div>
+    </div>
+
+    <!-- Error Modal -->
+    <div id="errorModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-exclamation-triangle"></i> Login Error</h3>
+                <button class="modal-close" onclick="closeErrorModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="errorMessage">Invalid credentials. Please try again.</p>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-primary" onclick="closeErrorModal()">OK</button>
+            </div>
+        </div>
+    </div>
+
+   <div class="login-portal">
+    <!-- Student Login -->
+    <form class="login-container student-container" id="studentLoginForm">
+      <h1><i class="fas fa-graduation-cap"></i> Student Login</h1>
+      <p class="container1-subtitle">Submit and track complaints.</p>
+      
+      <div class="input-group">
+        <label for="student-username">Username</label>
+        <div class="input-wrapper">
+          <i class="fas fa-user input-icon"></i>
+          <input type="text" id="student-username" name="username" placeholder="Enter Username" required>
+        </div>
+      </div>
+      
+      <div class="input-group">
+        <label for="student-password">Password</label>
+        <div class="input-wrapper">
+          <i class="fas fa-lock input-icon"></i>
+          <input type="password" id="student-password" name="password" placeholder="Enter Password" required>
+          <button type="button" class="password-toggle" onclick="togglePassword('student-password')">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+      </div>
+      
+      <button type="submit" class="login-btn student-btn" id="studentLoginBtn">
+        <span class="btn-text">Login as Student</span>
+        <span class="btn-loading" style="display: none;">
+          <i class="fas fa-spinner fa-spin"></i> Authenticating...
+        </span>
+      </button>
+      
+      <div class="demo-credentials">
+        <p><strong>Demo Student:</strong></p>
+        <p>Username: <code>student</code> | Password: <code>student123</code></p>
+      </div>
+      
+      <div class="footer">© 2025 Raise & Resolve Portal</div>
+    </form>
+    
+    <!-- Admin Login -->
+    <form class="login-container admin-container" id="adminLoginForm">
+      <h1><i class="fas fa-user-shield"></i> Admin Login</h1>
+      <p class="container2-subtitle">Resolve and manage complaints.</p>
+      
+      <div class="input-group">
+        <label for="admin-username">Username</label>
+        <div class="input-wrapper">
+          <i class="fas fa-user input-icon"></i>
+          <input type="text" id="admin-username" name="username" placeholder="Enter Username" required>
+        </div>
+      </div>
+      
+      <div class="input-group">
+        <label for="admin-password">Password</label>
+        <div class="input-wrapper">
+          <i class="fas fa-lock input-icon"></i>
+          <input type="password" id="admin-password" name="password" placeholder="Enter Password" required>
+          <button type="button" class="password-toggle" onclick="togglePassword('admin-password')">
+            <i class="fas fa-eye"></i>
+          </button>
+        </div>
+      </div>
+      
+      <button type="submit" class="login-btn admin-btn" id="adminLoginBtn">
+        <span class="btn-text">Login as Admin</span>
+        <span class="btn-loading" style="display: none;">
+          <i class="fas fa-spinner fa-spin"></i> Authenticating...
+        </span>
+      </button>
+      
+      <div class="demo-credentials">
+        <p><strong>Demo Admin:</strong></p>
+        <p>Username: <code>admin</code> | Password: <code>admin123</code></p>
+      </div>
+      
+      <div class="footer">© 2025 Raise & Resolve Portal</div>
+    </form>
+  </div>
+
+  <script src="auth.js"></script>
+</body>
+</html>

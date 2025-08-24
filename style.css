@@ -1,0 +1,635 @@
+/* =========================
+   CLASSIC LIGHT STYLE
+   (Uncomment this block to use)
+========================= */ 
+
+
+ body {
+  background: #f7f9fc;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.portal-title {
+    color: black;
+    font-size: 3rem;
+    margin-bottom: 0.3rem; 
+}
+
+  .portal-subtitle {
+      color: black;
+      font-size: 1.5rem;
+      margin-top: 0;
+      font-weight: 300;
+      margin-bottom:3rem;
+  }
+  .portal-title,
+  .portal-subtitle {
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+  }
+
+.login-portal {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 900px;
+}
+
+.login-container {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.15);
+  padding: 40px 32px 32px 32px;
+  width: 350px;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(44, 62, 80, 0.2);
+}
+
+.main-heading {
+  width: 100%;
+  text-align: center;
+  color: #222f3e;
+  font-size: 2.5em;
+  font-weight: 800;
+  margin-bottom: 32px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(44,62,80,0.10);
+}
+
+.student-container h1 {
+  color: #2e86de;
+  margin-top:0.6rem;
+   margin-bottom:0.5rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 0.5rem;
+}
+.admin-container h1 {
+  color: #38ada9;
+  margin-top:0.6rem;
+   margin-bottom:0.5rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 0.5rem;
+}
+.container1-subtitle{
+  color: #2e86de
+}
+.container2-subtitle{
+  color: #38ada9;
+}
+
+.container1-subtitle,
+ .container2-subtitle{
+       font-size: 1rem;
+       font-weight: 500;
+       text-align: center;
+       margin-top: 0.2rem;
+       margin-bottom: 1.5rem;
+ }
+
+/* Input Groups */
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  color: #8395a7;
+  z-index: 1;
+  transition: color 0.2s ease;
+}
+
+.input-wrapper.focused .input-icon {
+  color: #2e86de;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #8395a7;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1rem;
+  z-index: 1;
+  transition: color 0.2s;
+}
+
+.password-toggle:hover {
+  color: #2e86de;
+}
+
+label {
+  text-align: left;
+  margin: 16px 0 8px 0;
+  color: #222f3e;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 14px 12px 14px 40px;
+  margin-bottom: 8px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+  background: #f8f9fa;
+  color: #222f3e;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #2e86de;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(46, 134, 222, 0.1);
+}
+
+input[type="text"].valid,
+input[type="password"].valid {
+  border-color: #28a745;
+}
+
+input[type="text"].invalid,
+input[type="password"].invalid {
+  border-color: #dc3545;
+}
+
+.login-btn {
+  margin-top: 24px;
+  padding: 14px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.login-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+}
+
+.student-btn {
+  background: linear-gradient(135deg, #2e86de 0%, #1e6bb8 100%);
+}
+.student-btn:hover {
+  background: linear-gradient(135deg, #1e6bb8 0%, #155a9e 100%);
+}
+
+.admin-btn {
+  background: linear-gradient(135deg, #38ada9 0%, #2d8a87 100%);
+}
+.admin-btn:hover {
+  background: linear-gradient(135deg, #2d8a87 0%, #1f6b69 100%);
+}
+
+.login-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.footer {
+  margin-top: 32px;
+  color: #8395a7;
+  font-size: 0.9em;
+  border-top: 1px solid #f1f3f4;
+  padding-top: 20px;
+}
+
+/* Loading Overlay */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.loading-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #2e86de;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Error Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10001;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%;
+  overflow: hidden;
+}
+
+.modal-header {
+  background: #f8f9fa;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: #dc3545;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #6c757d;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.2s;
+}
+
+.modal-close:hover {
+  background: #e9ecef;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.modal-body p {
+  margin: 0;
+  color: #495057;
+  line-height: 1.5;
+}
+
+.modal-actions {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #e9ecef;
+  text-align: right;
+}
+
+.btn-primary {
+  background: #2e86de;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.btn-primary:hover {
+  background: #1b4f72;
+}
+
+@media (max-width: 900px) {
+  .login-portal {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  .login-container {
+    width: 90%;
+    max-width: 400px;
+  }
+}  
+  /* Add this for even smaller screens */
+@media (max-width: 600px) {
+  .portal-title {
+       font-size: 2rem;
+       text-align: center;
+   }
+   
+   .portal-subtitle {
+       font-size: 1rem;
+       text-align: center;
+       margin-top: 0.2rem;
+       margin-bottom: 1.2rem;
+   }
+ .login-container {
+   width: 98%;
+   max-width: 270px;
+   padding: 24px 16px 24px 16px;
+   margin-bottom:20px;
+ }
+ .main-heading {
+   font-size: 1.5em;
+   margin-bottom: 18px;
+ }
+ .student-container h1,
+ .admin-container h1 {
+   font-size: 1.4em;
+   margin-top:0.6rem;
+   margin-bottom:0.5rem;
+ }
+ .container1-subtitle,
+ .container2-subtitle{
+       font-size: 1rem;
+       font-weight: 500;
+       text-align: center;
+       margin-top: 0.2rem;
+       margin-bottom: 1.2rem;
+ }
+ input[type="text"],
+ input[type="password"] {
+   font-size: 0.95em;
+   padding: 12px 12px 12px 35px;
+ }
+ .login-btn {
+   font-size: 1em;
+   padding: 12px 0;
+ }
+ .footer {
+   margin-top: 24px;
+   padding-top: 16px;
+ }
+}
+ 
+
+/* =========================
+   MODERN GLASSY GRADIENT STYLE
+   (Uncomment this block to use)
+========================= */
+
+/* body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(135deg, #23297a 0%, #3bb2b8 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.portal-title {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 0.3rem; 
+ }
+
+.portal-subtitle {
+    color: white;
+    font-size: 1.5rem;
+    margin-top: 0;
+    font-weight: 300;
+}
+.portal-title,
+.portal-subtitle {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+
+.login-portal {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 900px;
+  z-index: 1;
+  margin-top:2rem;
+  margin-bottom:2rem
+}
+
+.login-container {
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(44, 62, 80, 0.18);
+  padding: 40px 32px 24px 32px;
+  width: 350px;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255,255,255,0.22);
+}
+
+.main-heading {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 2.5em;
+  font-weight: 800;
+  margin-bottom: 32px;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 16px rgba(44,62,80,0.25);
+}
+
+.student-container h1,
+.admin-container h1 {
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(44,62,80,0.35), 0 1px 0 #23297a;
+  margin-bottom: 10px;
+  font-size: 2em;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+label {
+  text-align: left;
+  margin: 16px 0 4px 0;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1em;
+  text-shadow: 0 2px 8px rgba(44,62,80,0.10);
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #b2bec3;
+  border-radius: 6px;
+  font-size: 1em;
+  outline: none;
+  background: rgba(255,255,255,0.85);
+  color: #23297a;
+  transition: border 0.2s, background 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border: 1.5px solid #246bfd;
+  background: #fff;
+}
+
+.login-btn {
+  margin-top: 18px;
+  padding: 12px 0;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(44, 62, 80, 0.10);
+}
+
+.student-btn {
+  background: linear-gradient(90deg, #246bfd 60%, #3bb2b8 100%);
+}
+.student-btn:hover {
+  background: #1a4fa0;
+}
+
+.admin-btn {
+  background: linear-gradient(90deg, #3bb2b8 60%, #246bfd 100%);
+}
+.admin-btn:hover {
+  background: #12876f;
+}
+
+.footer {
+  margin-top: 24px;
+  color: #e0e0e0;
+  font-size: 0.95em;
+  text-shadow: 0 2px 8px rgba(44,62,80,0.10);
+}
+
+@media (max-width: 900px) {
+  .login-portal {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  .login-container {
+    width: 90%;
+    max-width: 400px;
+  }
+}
+
+
+@media (max-width: 600px) {
+   .portal-title {
+        font-size: 2rem;
+        text-align: center;
+    }
+    
+    .portal-subtitle {
+        font-size: 1rem;
+        text-align: center;
+        margin-top: 0.2rem;
+    }
+  .login-container {
+    width: 98%;
+    max-width: 270px;
+    padding: 24px 8px 16px 8px;
+  }
+  .main-heading {
+    font-size: 1.5em;
+    margin-bottom: 18px;
+  }
+  .student-container h1,
+  .admin-container h1 {
+    font-size: 1.2em;
+  }
+  input[type="text"],
+  input[type="password"] {
+    font-size: 0.95em;
+    padding: 10px;
+  }
+  .login-btn {
+    font-size: 1em;
+    padding: 10px 0;
+  }
+} */ 

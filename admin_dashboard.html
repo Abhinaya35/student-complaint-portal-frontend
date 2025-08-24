@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard – Complaint Management</title>
+  <link rel="stylesheet" href="admin_dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar">
+    <div class="sidebar-header">
+      <h2><i class="fas fa-shield-alt"></i> Admin Panel</h2>
+    </div>
+    
+    <ul class="sidebar-menu">
+      <li class="menu-item active">
+        <a href="#dashboard" class="menu-link">
+          <i class="fas fa-tachometer-alt"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="#announcements" class="menu-link">
+          <i class="fas fa-bullhorn"></i>
+          <span>Announcements</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="#archive" class="menu-link">
+          <i class="fas fa-archive"></i>
+          <span>Complaint Archive</span>
+        </a>
+      </li>
+      <li class="menu-item">
+        <a href="#support" class="menu-link">
+          <i class="fas fa-headset"></i>
+          <span>Support & Contact</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main Content Area -->
+  <div class="main-content">
+    <!-- Header -->
+    <header class="admin-header">
+      <div class="header-content">
+        <div class="header-left">
+          <div class="welcome-section">
+            <span class="user-greeting">Welcome, Admin!</span>
+            <p class="welcome-subtitle">Manage complaints and keep students informed efficiently.</p>
+          </div>
+        </div>
+        <div class="header-right">
+          <div class="profile-dropdown">
+            <button class="profile-icon" id="profileIcon">
+              <i class="fas fa-user-circle"></i>
+            </button>
+            <div class="dropdown-menu" id="dropdownMenu">
+              <a href="#" class="dropdown-item">
+                <i class="fas fa-user"></i>
+                View Profile
+              </a>
+              <a href="#" class="dropdown-item">
+                <i class="fas fa-edit"></i>
+                Edit Profile
+              </a>
+              <a href="#" class="dropdown-item">
+                <i class="fas fa-sign-out-alt"></i>
+                Logout
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+         <!-- Dashboard Content -->
+     <main class="dashboard-content">
+       <!-- Dashboard Section (Default) -->
+       <section class="stats-section">
+         <div class="stats-grid">
+           <div class="stat-card">
+             <div class="stat-icon pending">
+               <i class="fas fa-clock"></i>
+             </div>
+             <div class="stat-info">
+               <h3>Pending</h3>
+               <p class="stat-number">24</p>
+               <p class="stat-change">+3 from yesterday</p>
+             </div>
+           </div>
+           
+           <div class="stat-card">
+             <div class="stat-icon resolved">
+               <i class="fas fa-check-circle"></i>
+             </div>
+             <div class="stat-info">
+               <h3>Resolved</h3>
+               <p class="stat-number">156</p>
+               <p class="stat-change">+12 this week</p>
+             </div>
+           </div>
+           
+           <div class="stat-card">
+             <div class="stat-icon total">
+               <i class="fas fa-list-alt"></i>
+             </div>
+             <div class="stat-info">
+               <h3>Total Complaints</h3>
+               <p class="stat-number">180</p>
+               <p class="stat-change">This month</p>
+             </div>
+           </div>
+           
+           <div class="stat-card">
+             <div class="stat-icon urgent">
+               <i class="fas fa-exclamation-triangle"></i>
+             </div>
+             <div class="stat-info">
+               <h3>High Priority</h3>
+               <p class="stat-number">8</p>
+               <p class="stat-change">Requires attention</p>
+             </div>
+           </div>
+         </div>
+       </section>
+
+       <!-- Recent Complaints Table -->
+       <section class="complaints-section">
+         <div class="section-header">
+           <h2><i class="fas fa-list-alt"></i> Recent Complaints</h2>
+           <div class="section-actions">
+             <button class="btn-primary">
+               <i class="fas fa-plus"></i> View All
+             </button>
+           </div>
+         </div>
+
+         <!-- Search and Filter Controls -->
+         <div class="table-controls">
+           <div class="search-box">
+             <i class="fas fa-search"></i>
+             <input type="text" id="searchComplaints" placeholder="Search complaints...">
+           </div>
+           <div class="filter-controls">
+             <select id="statusFilter">
+               <option value="">All Status</option>
+               <option value="pending">Pending</option>
+               <option value="resolved">Resolved</option>
+             </select>
+             <select id="priorityFilter">
+               <option value="">All Priorities</option>
+               <option value="high">High Priority</option>
+               <option value="medium">Medium Priority</option>
+               <option value="low">Low Priority</option>
+             </select>
+             <select id="categoryFilter">
+               <option value="">All Categories</option>
+               <option value="academic">Academic</option>
+               <option value="hostel">Hostel</option>
+               <option value="mess">Mess</option>
+               <option value="wifi">WiFi</option>
+               <option value="infrastructure">Infrastructure</option>
+               <option value="transport">Transport</option>
+             </select>
+           </div>
+         </div>
+
+         <table class="complaints-table">
+           <thead>
+             <tr>
+               <th>Complaint ID</th>
+               <th>Student</th>
+               <th>Category</th>
+               <th>Priority</th>
+               <th>Submitted On</th>
+               <th>Status</th>
+               <th>Action</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <td>202501</td>
+               <td>Abhinaya K.</td>
+               <td><span class="category-badge">🍽️ Mess</span></td>
+               <td><span class="priority-badge high">🔴 High</span></td>
+               <td>2025-07-28</td>
+               <td class="status-pending">Pending</td>
+               <td>
+                 <button class="btn-action">View</button>
+                 <button class="btn-action">Resolve</button>
+               </td>
+             </tr>
+             <tr>
+               <td>202490</td>
+               <td>Rahul S.</td>
+               <td><span class="category-badge">📶 WiFi</span></td>
+               <td><span class="priority-badge medium">🟡 Medium</span></td>
+               <td>2025-07-20</td>
+               <td class="status-resolved">Resolved</td>
+               <td>
+                 <button class="btn-action">View</button>
+               </td>
+             </tr>
+             <tr>
+               <td>202485</td>
+               <td>Priya M.</td>
+               <td><span class="category-badge">🏠 Hostel</span></td>
+               <td><span class="priority-badge low">🟢 Low</span></td>
+               <td>2025-07-15</td>
+               <td class="status-pending">Pending</td>
+               <td>
+                 <button class="btn-action">View</button>
+                 <button class="btn-action">Resolve</button>
+               </td>
+             </tr>
+             <tr>
+               <td>202480</td>
+               <td>Arjun P.</td>
+               <td><span class="category-badge">📚 Academic</span></td>
+               <td><span class="priority-badge high">🔴 High</span></td>
+               <td>2025-07-10</td>
+               <td class="status-pending">Pending</td>
+               <td>
+                 <button class="btn-action">View</button>
+                 <button class="btn-action">Resolve</button>
+               </td>
+             </tr>
+           </tbody>
+         </table>
+       </section>
+
+       <!-- Announcements Section (Hidden by default) -->
+       <section class="announcements-section" style="display: none;">
+         <div class="section-header">
+           <h2><i class="fas fa-bullhorn"></i> Announcements</h2>
+           <button class="btn-primary">
+             <i class="fas fa-plus"></i> New Announcement
+           </button>
+         </div>
+         <div class="announcements-list">
+           <div class="announcement-card">
+             <div class="announcement-header">
+               <h3>Water Maintenance Notice</h3>
+               <span class="announcement-date">2025-07-28</span>
+             </div>
+             <p>Water maintenance will be carried out on 8th August from 10 AM to 2 PM. Please store water accordingly.</p>
+             <div class="announcement-actions">
+               <button class="btn-action">Edit</button>
+               <button class="btn-action">Delete</button>
+             </div>
+           </div>
+           <div class="announcement-card">
+             <div class="announcement-header">
+               <h3>Mess Feedback Form</h3>
+               <span class="announcement-date">2025-07-25</span>
+             </div>
+             <p>Mess feedback form is now live. Please provide your valuable feedback to improve food quality.</p>
+             <div class="announcement-actions">
+               <button class="btn-action">Edit</button>
+               <button class="btn-action">Delete</button>
+             </div>
+           </div>
+         </div>
+       </section>
+
+       <!-- Archive Section (Hidden by default) -->
+       <section class="archive-section" style="display: none;">
+         <div class="section-header">
+           <h2><i class="fas fa-archive"></i> Complaint Archive</h2>
+           <div class="section-actions">
+             <button class="btn-primary">
+               <i class="fas fa-download"></i> Export
+             </button>
+           </div>
+         </div>
+         <div class="table-controls">
+           <div class="search-box">
+             <i class="fas fa-search"></i>
+             <input type="text" placeholder="Search archived complaints...">
+           </div>
+           <div class="filter-controls">
+             <select>
+               <option value="">All Categories</option>
+               <option value="academic">Academic</option>
+               <option value="hostel">Hostel</option>
+               <option value="mess">Mess</option>
+               <option value="wifi">WiFi</option>
+             </select>
+             <select>
+               <option value="">All Months</option>
+               <option value="july">July 2025</option>
+               <option value="june">June 2025</option>
+               <option value="may">May 2025</option>
+             </select>
+           </div>
+         </div>
+         <table class="complaints-table">
+           <thead>
+             <tr>
+               <th>Complaint ID</th>
+               <th>Student</th>
+               <th>Category</th>
+               <th>Priority</th>
+               <th>Submitted On</th>
+               <th>Resolved On</th>
+               <th>Action</th>
+             </tr>
+           </thead>
+           <tbody>
+             <tr>
+               <td>202400</td>
+               <td>Sarah K.</td>
+               <td><span class="category-badge">📶 WiFi</span></td>
+               <td><span class="priority-badge high">🔴 High</span></td>
+               <td>2025-07-01</td>
+               <td>2025-07-03</td>
+               <td><button class="btn-action">View</button></td>
+             </tr>
+             <tr>
+               <td>202399</td>
+               <td>Mike R.</td>
+               <td><span class="category-badge">🏠 Hostel</span></td>
+               <td><span class="priority-badge medium">🟡 Medium</span></td>
+               <td>2025-06-28</td>
+               <td>2025-07-02</td>
+               <td><button class="btn-action">View</button></td>
+             </tr>
+           </tbody>
+         </table>
+       </section>
+
+       <!-- Support Section (Hidden by default) -->
+       <section class="support-section" style="display: none;">
+         <div class="section-header">
+           <h2><i class="fas fa-headset"></i> Support & Contact</h2>
+         </div>
+         <div class="support-content">
+           <div class="support-card">
+             <h3><i class="fas fa-envelope"></i> Contact Information</h3>
+             <div class="contact-info">
+               <p><strong>Email:</strong> admin@college.edu</p>
+               <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+               <p><strong>Office Hours:</strong> Monday - Friday, 9 AM - 5 PM</p>
+             </div>
+           </div>
+           <div class="support-card">
+             <h3><i class="fas fa-question-circle"></i> Quick Help</h3>
+             <div class="help-links">
+               <a href="#" class="help-link">How to manage complaints</a>
+               <a href="#" class="help-link">System user guide</a>
+               <a href="#" class="help-link">FAQ</a>
+               <a href="#" class="help-link">Report a bug</a>
+             </div>
+           </div>
+           <div class="support-card">
+             <h3><i class="fas fa-tools"></i> System Status</h3>
+             <div class="system-status">
+               <p><span class="status-indicator online"></span> All systems operational</p>
+               <p><span class="status-indicator online"></span> Database: Connected</p>
+               <p><span class="status-indicator online"></span> ML Model: Active</p>
+             </div>
+           </div>
+         </div>
+       </section>
+     </main>
+  </div>
+
+  <!-- Complaint Detail Modal -->
+  <div class="modal-overlay" id="complaintModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fas fa-file-alt"></i> Complaint Details</h2>
+        <button class="modal-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      
+      <div class="modal-body">
+        <div class="complaint-info-grid">
+          <div class="info-item">
+            <label>Complaint ID:</label>
+            <span id="modalComplaintId">202501</span>
+          </div>
+          <div class="info-item">
+            <label>Student:</label>
+            <span id="modalStudentName">Abhinaya K.</span>
+          </div>
+          <div class="info-item">
+            <label>Category:</label>
+            <span id="modalCategory">🍽️ Mess</span>
+          </div>
+          <div class="info-item">
+            <label>Priority:</label>
+            <span id="modalPriority">🔴 High</span>
+          </div>
+          <div class="info-item">
+            <label>Submitted On:</label>
+            <span id="modalSubmittedDate">2025-07-28</span>
+          </div>
+          <div class="info-item">
+            <label>Status:</label>
+            <span id="modalStatus" class="status-pending">Pending</span>
+          </div>
+        </div>
+        
+        <div class="complaint-details">
+          <label>Complaint Description:</label>
+          <div class="complaint-text" id="modalComplaintDetails">
+            This is the detailed complaint description...
+          </div>
+        </div>
+        
+        <div class="modal-actions">
+          <div class="action-group">
+            <label for="categorySelect">Update Category:</label>
+            <select id="categorySelect">
+              <option value="">Select new category</option>
+              <option value="academic">📚 Academic</option>
+              <option value="hostel">🏠 Hostel</option>
+              <option value="mess">🍽️ Mess</option>
+              <option value="wifi">📶 WiFi</option>
+              <option value="infrastructure">🏗️ Infrastructure</option>
+              <option value="transport">🚌 Transport</option>
+              <option value="other">📋 Other</option>
+            </select>
+            <button id="updateCategoryBtn" class="btn-secondary">
+              <i class="fas fa-edit"></i> Update Category
+            </button>
+          </div>
+          
+          <div class="action-group">
+            <button id="markResolvedBtn" class="btn-success">
+              <i class="fas fa-check"></i> Mark as Resolved
+            </button>
+            <button class="btn-secondary">
+              <i class="fas fa-comment"></i> Add Note
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- External JavaScript -->
+  <script src="admin_dashboard.js"></script>
+</body>
+</html>
