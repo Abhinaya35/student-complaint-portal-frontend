@@ -55,6 +55,33 @@ A comprehensive complaint management system with separate interfaces for student
 ├── 📄 admin_dashboard.js      # Admin dashboard functionality
 └── 📄 README.md               # This file
 ```
+## Frontend Preview
+
+Below are screenshots showcasing the main user interfaces and key features of the Student Complaint Portal frontend application.
+
+### Login Interface
+![Login](images/img1.png)
+
+### Student Dashboard Home
+![Student Dashboard](images/img2.png)
+
+### Complaints Submission & Tracking
+![My Complaints](images/img3.png)
+
+### Student Announcements Panel
+![Student Announcements](images/img4.png)
+
+### Administrator Dashboard Overview
+![Admin Dashboard](images/img5.png)
+
+### Admin Announcements Management
+![Admin Announcements](images/img6.png)
+
+### Complaints Archive and History
+![Complaints Archive](images/img7.png)
+
+### Administrator Contact Information Panel
+![Admin Contact Info](images/img8.png)
 
 ## 🔧 How to Use
 
